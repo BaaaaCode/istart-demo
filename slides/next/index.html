@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I-start 시연 슬라이드 · "개선안</title>
+<style>
+  :root { --bg: #e9eeea; --ink: #15231b; --point: #176c4a; --gold: #f1c165; --bar: #15231b; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body { display: flex; flex-direction: column; align-items: center; background: var(--bg); color: var(--ink);
+    font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif; word-break: keep-all; }
+  header { width: 100%; padding: 10px 16px; text-align: center; font-weight: 800; font-size: 16px; color: var(--point); }
+  .stage { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; padding: 0 16px; }
+  .phone { height: min(100%, 860px); aspect-ratio: 390 / 844; max-width: calc(100vw - 32px); border: 10px solid #0f1a14; border-radius: 40px;
+    overflow: hidden; background: #fff; box-shadow: 0 20px 50px rgba(21, 35, 27, .25); position: relative; }
+  .phone img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: 0; transition: opacity .35s ease; }
+  .phone img.on { opacity: 1; }
+  .bar { width: 100%; background: var(--bar); color: #fff; padding: 10px 12px 12px; }
+  .cap { min-height: 52px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 18px; font-weight: 700; line-height: 26px; margin: 0 auto 8px; max-width: 720px; }
+  .count { color: var(--gold); font-size: 14px; margin-right: 8px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .ctl { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; }
+  button { font: inherit; font-size: 15px; font-weight: 800; min-height: 44px; min-width: 44px; padding: 0 12px; border-radius: 999px; border: 0;
+    background: rgba(255, 255, 255, .15); color: #fff; cursor: pointer; white-space: nowrap; }
+  button.main { background: var(--gold); color: var(--ink); }
+  button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { .phone img { transition: none; } }
+</style>
+</head>
+<body>
+<header>I-start 시연 슬라이드 · "개선안 <span style="font-weight:600;color:#56695e">(인터넷 없이 보는 예비본)</span></header>
+<div class="stage"><div class="phone" id="phone">
+  <img src="img/01.png" alt="처음 열면 시작 화면 — 「시작하기」 를 눌러요" class="on">
+  <img src="img/02.png" alt="앱 언어를 골라요 (오른쪽 위 지구본으로 언제든 바꿔요)">
+  <img src="img/03.png" alt="기본 정보 입력 — 가상 인물 Mai, 입국 2주차">
+  <img src="img/04.png" alt="수집 항목 · 목적 · 보유 기간을 보고 동의해요">
+  <img src="img/05.png" alt="입국일로 단계를 추천해요 — 정하는 건 이용자">
+  <img src="img/06.png" alt="입국 직후 할 일 — 「숙소로 이동하기」">
+  <img src="img/07.png" alt="도움 도구: 숙소를 지도 앱에서 찾아요 (새 창은 열지 않아요)">
+  <img src="img/08.png" alt="체크리스트(입국 직후) — 외국인등록은 검색으로 찾아볼게요">
+  <img src="img/09.png" alt="「외국인등록」 을 검색해요">
+  <img src="img/10.png" alt="결과마다 단계 · 출처가 붙어요 — 전체 단계로 넓혀요">
+  <img src="img/11.png" alt="「외국인등록 하기」 를 열어요">
+  <img src="img/12.png" alt="대상 · 방법 · 기한 · 준비물, 그리고 공식 안내(하이코리아) 바로가기">
+  <img src="img/13.png" alt="도움 도구: 입국일 + 90일 = 외국인등록 기한">
+  <img src="img/14.png" alt="방문 예약을 마치면 「진행 중」">
+  <img src="img/15.png" alt="등록증을 받으면 「완료」">
+  <img src="img/16.png" alt="외국인등록을 마치면 「초기 정착」 으로 옮길지 물어봐요 — 누르면 옮겨요">
+  <img src="img/17.png" alt="초기 정착 — 「체류기간 확인하기」">
+  <img src="img/18.png" alt="도움 도구: 연장 신청 기간 (만료 4개월 전 ~ 만료일)">
+  <img src="img/19.png" alt="이번엔 「건강보험 확인하기」">
+  <img src="img/20.png" alt="건강보험 고지서 읽는 법은 없어요 — 검색해 볼게요">
+  <img src="img/21.png" alt="「고지서」 로 검색해요">
+  <img src="img/22.png" alt="내 단계엔 결과가 없어요 → 전체 단계로">
+  <img src="img/23.png" alt="전체 단계도 0건 — 시뮬레이션에서 찾은 문제 · 챗봇에 물어볼게요">
+  <img src="img/24.png" alt="챗봇 아잉에게 물어봐요">
+  <img src="img/25.png" alt="앱 안에 답이 없으면 커뮤니티 · 센터로 안내해요">
+  <img src="img/26.png" alt="제목은 검색어로 채워져요 · 개인정보는 쓰지 않아요">
+  <img src="img/27.png" alt="질문을 올렸어요 — 급하면 센터 상담으로">
+  <img src="img/28.png" alt="메일 문의를 보내요 (시제품: 실제로 보내지 않아요)">
+  <img src="img/29.png" alt="접수됐어요 — 내 정보에서 다시 확인해요">
+  <img src="img/30.png" alt="내 정보 › 메일로 문의한 내역에 1건 — 시연 끝">
+</div></div>
+<div class="bar" role="region" aria-label="슬라이드 조작">
+  <p class="cap" aria-live="polite"><span class="count" id="count"></span><span id="cap"></span></p>
+  <div class="ctl">
+    <button id="prev" aria-label="이전">‹ 이전</button>
+    <button id="play" class="main" aria-pressed="false">❚❚ 멈춤</button>
+    <button id="next" aria-label="다음">다음 ›</button>
+    <button id="speed" aria-label="속도 1×">1×</button>
+    <button id="end">처음으로</button>
+  </div>
+</div>
+<script>
+  const S = [{"img":"img/01.png","cap":"처음 열면 시작 화면 — 「시작하기」 를 눌러요"},{"img":"img/02.png","cap":"앱 언어를 골라요 (오른쪽 위 지구본으로 언제든 바꿔요)"},{"img":"img/03.png","cap":"기본 정보 입력 — 가상 인물 Mai, 입국 2주차"},{"img":"img/04.png","cap":"수집 항목 · 목적 · 보유 기간을 보고 동의해요"},{"img":"img/05.png","cap":"입국일로 단계를 추천해요 — 정하는 건 이용자"},{"img":"img/06.png","cap":"입국 직후 할 일 — 「숙소로 이동하기」"},{"img":"img/07.png","cap":"도움 도구: 숙소를 지도 앱에서 찾아요 (새 창은 열지 않아요)"},{"img":"img/08.png","cap":"체크리스트(입국 직후) — 외국인등록은 검색으로 찾아볼게요"},{"img":"img/09.png","cap":"「외국인등록」 을 검색해요"},{"img":"img/10.png","cap":"결과마다 단계 · 출처가 붙어요 — 전체 단계로 넓혀요"},{"img":"img/11.png","cap":"「외국인등록 하기」 를 열어요"},{"img":"img/12.png","cap":"대상 · 방법 · 기한 · 준비물, 그리고 공식 안내(하이코리아) 바로가기"},{"img":"img/13.png","cap":"도움 도구: 입국일 + 90일 = 외국인등록 기한"},{"img":"img/14.png","cap":"방문 예약을 마치면 「진행 중」"},{"img":"img/15.png","cap":"등록증을 받으면 「완료」"},{"img":"img/16.png","cap":"외국인등록을 마치면 「초기 정착」 으로 옮길지 물어봐요 — 누르면 옮겨요"},{"img":"img/17.png","cap":"초기 정착 — 「체류기간 확인하기」"},{"img":"img/18.png","cap":"도움 도구: 연장 신청 기간 (만료 4개월 전 ~ 만료일)"},{"img":"img/19.png","cap":"이번엔 「건강보험 확인하기」"},{"img":"img/20.png","cap":"건강보험 고지서 읽는 법은 없어요 — 검색해 볼게요"},{"img":"img/21.png","cap":"「고지서」 로 검색해요"},{"img":"img/22.png","cap":"내 단계엔 결과가 없어요 → 전체 단계로"},{"img":"img/23.png","cap":"전체 단계도 0건 — 시뮬레이션에서 찾은 문제 · 챗봇에 물어볼게요"},{"img":"img/24.png","cap":"챗봇 아잉에게 물어봐요"},{"img":"img/25.png","cap":"앱 안에 답이 없으면 커뮤니티 · 센터로 안내해요"},{"img":"img/26.png","cap":"제목은 검색어로 채워져요 · 개인정보는 쓰지 않아요"},{"img":"img/27.png","cap":"질문을 올렸어요 — 급하면 센터 상담으로"},{"img":"img/28.png","cap":"메일 문의를 보내요 (시제품: 실제로 보내지 않아요)"},{"img":"img/29.png","cap":"접수됐어요 — 내 정보에서 다시 확인해요"},{"img":"img/30.png","cap":"내 정보 › 메일로 문의한 내역에 1건 — 시연 끝"}];
+  const imgs = [...document.querySelectorAll("#phone img")];
+  let i = 0, playing = true, speed = 1, timer = null;
+  const $ = (id) => document.getElementById(id);
+  function show(k) {
+    i = (k + S.length) % S.length;
+    imgs.forEach((im, j) => im.classList.toggle("on", j === i));
+    $("count").textContent = (i + 1) + "/" + S.length;
+    $("cap").textContent = S[i].cap;
+    schedule();
+  }
+  function schedule() {
+    clearTimeout(timer);
+    if (playing) timer = setTimeout(() => show(i + 1), 3500 / speed); // 끝나면 처음으로
+  }
+  function toggle() {
+    playing = !playing;
+    $("play").textContent = playing ? "❚❚ 멈춤" : "▶ 재생";
+    $("play").setAttribute("aria-pressed", String(!playing));
+    schedule();
+  }
+  $("prev").onclick = () => show(i - 1);
+  $("next").onclick = () => show(i + 1);
+  $("play").onclick = toggle;
+  $("speed").onclick = () => { speed = speed === 1 ? 1.5 : speed === 1.5 ? 0.5 : 1; $("speed").textContent = speed + "×"; $("speed").setAttribute("aria-label", "속도 " + speed + "×"); schedule(); };
+  $("end").onclick = () => { playing = true; toggle(); show(0); };
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") { e.preventDefault(); show(i + 1); }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); show(i - 1); }
+    else if (e.key === " ") { e.preventDefault(); toggle(); }
+  });
+  show(0);
+</script>
+</body>
+</html>
